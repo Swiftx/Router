@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ioc driver="default">
+<router>
 
-    <!-- 定义使用PDO连接池的数据源举例 -->
-    <bean id="DB.Default" class="PDO">
-        <!-- 指定连接数据库的参数 -->
-        <construct type="string">mysql:dbname=testdb;host=127.0.0.1</construct>
-        <construct type="string">root</construct>
-        <construct type="string">123456</construct>
-    </bean>
+    <package name="com.wq" extends="struts-default">
+        <!-- 配置一个路由 -->
+        <action class="demo.page">
+
+        </action>
+        <result name="success">/welcome.jsp</result>
+        <result name="error">/error.jsp</result>
+    </package>
 
     <!-- 定义使用Smarty对象举例 -->
     <bean id="View.Smarty" class="Smarty" include="/Library/Smarty.class.php">
@@ -28,4 +29,4 @@
 
     <include file="" />
 
-</ioc>
+</router>
